@@ -23,21 +23,26 @@ public class HealthSystem : MonoBehaviour
     void Awake()
     {
         currentHealth = maxHealth;
-        healthbarUI.maxValue = maxHealth;
 
         _animator = GetComponent<Animator>();
         _sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        //Debug.Log(healthbarUI);
+        healthbarUI.maxValue = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if(Input.GetKeyUp(KeyCode.B))
-        {
-            DecereaseHealth(10);
-            return;
-        }
+        //if(Input.GetKeyUp(KeyCode.B))
+        //{
+        //    DecereaseHealth(10);
+        //    return;
+        //}
         
     }
 
@@ -54,7 +59,7 @@ public class HealthSystem : MonoBehaviour
     {
         _animator.SetBool(deathAniParameter, true);
         SelectingObjectComponents();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
         _animator.SetBool(deathAniParameter, false);
     }
@@ -81,11 +86,12 @@ public class HealthSystem : MonoBehaviour
 
         if (remainingHealth <= 0)
         {
-            StartCoroutine(DeathAnimationChange());
+            //StartCoroutine(DeathAnimationChange());
             healthbarUI.value = 0;
+            Destroy(this.gameObject);
             return;
         }
-
+        Debug.Log(string.Format("{0} health remaining", remainingHealth));
         currentHealth = remainingHealth;
         healthbarUI.value = currentHealth;
     }

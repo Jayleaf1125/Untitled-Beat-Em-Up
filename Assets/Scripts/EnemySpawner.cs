@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Instantiate(enemy, this.transform.position, this.transform.rotation);
+        Instantiate(enemy, this.transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame

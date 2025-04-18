@@ -37,7 +37,7 @@ public class CombatV2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PunchComboIntiate();
+        //PunchComboIntiate();
         KickComboIntiate();
     }
 
@@ -106,14 +106,14 @@ public class CombatV2 : MonoBehaviour
     public void DealPunchDamage()
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(punchAttackPoint.position, weaponRange, enemyLayer);
-        Debug.Log(enemies[0].tag);
+        Debug.Log(enemies[0].tag ?? "None");
         if (enemies.Length > 0) enemies[0].GetComponent<HealthSystem>().DecereaseHealth(punchDamage);
     }
 
     public void DealKickDamage()
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(kickAttackPoint.position, weaponRange, enemyLayer);
-        Debug.Log(enemies[0]);
+        Debug.Log(enemies[0].tag ?? "None");
         if (enemies.Length > 0) enemies[0].GetComponent<HealthSystem>().DecereaseHealth(kickDamage);
     }
 

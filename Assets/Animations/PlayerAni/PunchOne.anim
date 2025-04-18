@@ -22,11 +22,11 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 2466620926526534710, guid: ad9fe886f4bbfa34fbd915683185c8a3, type: 3}
-    - time: 0.15
+    - time: 0.18333334
       value: {fileID: -3010673019063389822, guid: ad9fe886f4bbfa34fbd915683185c8a3, type: 3}
     - time: 0.35
       value: {fileID: 4168973354498102007, guid: ad9fe886f4bbfa34fbd915683185c8a3, type: 3}
-    - time: 0.5
+    - time: 0.51666665
       value: {fileID: 7605380290780013124, guid: ad9fe886f4bbfa34fbd915683185c8a3, type: 3}
     attribute: m_Sprite
     path: 
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.51666665
+    m_StopTime: 0.5333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,7 +79,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.35
+  - time: 0.36666667
     functionName: DealPunchDamage
     data: 
     objectReferenceParameter: {fileID: 0}
